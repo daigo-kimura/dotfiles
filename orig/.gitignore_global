@@ -1,0 +1,52 @@
+# global .gitignore
+
+# Compiled source
+*.com
+*.class
+*.dll
+*.exe
+*.mo
+*.o
+*.out
+*.so
+
+# Package
+*.7z
+*.dmg
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# OS generated file
+.DS_Store
+.DS_Store?
+._*
+
+# Eclipse
+.settings
+
+# Gradle
+.gradle/
+
+# Python
+__pycache__/
+venv/
+.pytest_cache/
+
+# Vim
+*.vim~
+*.un~
+
+# ctags
+tags
+
+# Backup
+*.bak
+
+# Other
+Icon?
+*.log
+.flowconfig
+.eslintrc.json

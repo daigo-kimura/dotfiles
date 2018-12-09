@@ -8,9 +8,9 @@ copy:
 	@for t in $(TARGETS); do \
 		if [[ ! -e $(CURDIR)/$(LINKDIR)/$$t ]]; then \
 			cp $(CURDIR)/$(ORIGDIR)/$$t $(CURDIR)/$(LINKDIR); \
-			echo Copy: $(CURDIR)/$(LINKDIR)/$$t; \
+			echo "Copy: $(CURDIR)/$(LINKDIR)/$$t"; \
 		else \
-			echo Skip: $(CURDIR)/$(LINKDIR)/$$t already exist!; \
+			echo "Skip: $(CURDIR)/$(LINKDIR)/$$t already exist!"; \
 		fi \
 	done
 
@@ -20,12 +20,12 @@ clean:
 		if [[ -e $(CURDIR)/$(LINKDIR)/$$t ]]; then \
 			if [ -z `diff $(CURDIR)/$(ORIGDIR)/$$t $(CURDIR)/$(LINKDIR)/$$t` ]; then \
 				rm $(CURDIR)/$(LINKDIR)/$$t; \
-				echo Remove: $(CURDIR)/$(LINKDIR)/$$t; \
+				echo "Remove: $(CURDIR)/$(LINKDIR)/$$t"; \
 			else \
-				echo Changes found: $(CURDIR)/$(LINKDIR)/$$t; \
+				echo "Changes found: $(CURDIR)/$(LINKDIR)/$$t"; \
 			fi \
 		else \
-			echo No such file: $(CURDIR)/$(LINKDIR)/$$t; \
+			echo "No such file: $(CURDIR)/$(LINKDIR)/$$t"; \
 		fi \
 	done
 
@@ -33,12 +33,12 @@ clean:
 link:
 	@for t in $(TARGETS); do\
 		ln -s $(CURDIR)/$(LINKDIR)/$$t ~/$$t; \
-		echo Link: ~/$$t "-->" $(CURDIR)/$(LINKDIR)/$$t; \
+		echo "Link: ~/$$t --> $(CURDIR)/$(LINKDIR)/$$t"; \
 	done
 
 .PHONY: unlink
 unlink:
 	@for t in $(TARGETS); do\
 		unlink ~/$$t; \
-		echo Unlink: ~/$$t "-X->" $(CURDIR)/$(LINKDIR)/$$t; \
+		echo "Unlink: ~/$$t -X-> $(CURDIR)/$(LINKDIR)/$$t"; \
 	done

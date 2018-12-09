@@ -1,5 +1,5 @@
 CURDIR := $(shell pwd)
-TARGETS := .tmux.conf .gitconfig .gitignore_global
+TARGETS := .tmux.conf .gitconfig .gitignore_global .ctags
 ORIGDIR := orig
 LINKDIR := link
 

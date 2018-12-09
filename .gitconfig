@@ -1,0 +1,17 @@
+[core]
+	excludesfile = ~/.gitignore_global
+	editor = nvim
+[alias]
+	gr = log --graph --date-order --all --pretty=format:'%h %Cred%d %Cgreen%ad %Cblue%cn %Creset%s' --date=short
+  cp = cherry-pick
+  st = status
+  stt = status -uno
+	co = checkout
+	cm = commit
+  b = branch
+  bd = branch -d
+  sp = stash pop
+  ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+  ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+[push]
+	default = matching

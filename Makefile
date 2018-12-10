@@ -9,7 +9,7 @@ copy:
 		if [[ ! -e $(CURDIR)/$(LINKDIR) ]]; then \
 			mkdir $(CURDIR)/$(LINKDIR); \
 			echo "Create dir $(CURDIR)/$(LINKDIR)"; \
-		fi \
+		fi; \
 		if [[ ! -e $(CURDIR)/$(LINKDIR)/$$t ]]; then \
 			cp $(CURDIR)/$(ORIGDIR)/$$t $(CURDIR)/$(LINKDIR); \
 			echo "Copy: $(CURDIR)/$(LINKDIR)/$$t"; \

@@ -6,6 +6,10 @@ LINKDIR := link
 .PHONY: copy
 copy:
 	@for t in $(TARGETS); do \
+		if [[ ! -e $(CURDIR)/$(LINKDIR) ]]; then \
+			mkdir $(CURDIR)/$(LINKDIR); \
+			echo "Create dir $(CURDIR)/$(LINKDIR)"; \
+		fi \
 		if [[ ! -e $(CURDIR)/$(LINKDIR)/$$t ]]; then \
 			cp $(CURDIR)/$(ORIGDIR)/$$t $(CURDIR)/$(LINKDIR); \
 			echo "Copy: $(CURDIR)/$(LINKDIR)/$$t"; \

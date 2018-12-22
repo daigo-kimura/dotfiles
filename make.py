@@ -23,9 +23,11 @@ def change_file(path):
         with open(path, "r") as f:
             for line in f:
                 if "example_user" in line:
-                    contents.append(line.replace("example_user", config.GITCONFIG_NAME))
+                    contents.append(
+                        line.replace("example_user", config.GITCONFIG_NAME))
                 elif "example@example.com" in line:
-                    contents.append(line.replace("example@example.com", config.GITCONFIG_MAIL))
+                    contents.append(
+                        line.replace("example@example.com", config.GITCONFIG_MAIL))
                 else:
                     contents.append(line)
             return contents
@@ -59,7 +61,6 @@ def copy2linkdir(target_files):
             store_file(link_path, contents)
         else:
             shutil.copy(orig_path, link_path)
-            continue
 
         print(orig_path + " -> " + link_path)
 
